@@ -61,15 +61,19 @@ var projects = {
 		"titleURL"	: "https://github.com/mitchwa1/Udacity-Front-End-ND-P1-PortfolioSite.git",
 		"dates" : "January 2016 - present",
 		"description" : ["Project 1 - Udacity Front-End NanoDegree.  I built a 'mock-portfolio' " +
-		"- including a google maps API using Polymer to show locations of where I have lived"],
+				"including a google maps API using Polymer to show locations of where I have lived"],
 		"images" : ["images/Project1.png"]
 	},
 	{
-		"title" : "Mechanical Engineering. Capstone Project",
-		"titleURL"	: "https://github.com/mitchwa1/Udacity-Front-End-ND-P1-PortfolioSite.git",
+		"title" : "Mechanical Engineering Capstone - Lung Biopsy Needle",
+		"titleURL"	: "http://www.mdc.umn.edu/",
 		"dates" : "2012",
-		"description" : ["<h2>Lung Biopsy Needle</h2> "],
-		"images" : ["images/UMN_Large.png"]
+		"description" : ["Collaborated with a team of six individuals to design and " +
+		 		"prototype an innovative lung biopsy needle that resulted in two University " +
+		 		"Invention disclosures." , "Directed five customer interviews with medical " + 
+		 		"professionals to validate product ideation and receive continuous "
+		 		+ " feedback during the development process."],
+		"images" : []
 
 	}
 	]
@@ -97,20 +101,48 @@ var education = {
 	"schools": [
 	{
 		"name" : "University of Minnesota, Twin Cities",
-		"location" : "Minneapolis,MN",
+		"location" : "Minneapolis, MN",
 		"degree" : "B.S.",
 		"majors" : ["Mechanical Engineering"],
 		"dates" : "2012",
-		"url" : "http://me.umn.edu/index.shtml"
+		"url" : "http://me.umn.edu/index.shtml",
+		"activities" : ["American Society of Mechanical Engineers (ASME)" ,
+		"National Organization for Business & Engineering (NOBE)" ,
+		"Minnesota Space Grant Consortium (NASA)"]
 	},
 	],
 	"onlineCourses": [
 	{
 		"title" : "Front-End NanoDegree",
 		"school" : "Udacity",
-		"dates" : "November 2016 - present",
-		"url" : "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+		"dates" : "January 2016 - present",
+		"url" : "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001",
+		"description" : "Taking various courses focused on Front-End design using HTML, CSS and JavaScript " +
+				"- with the end goal to build six portfolio projects using responsive design optimized " +
+				"for security and performance."
 	},
+	{
+		"title" : "JavaScript: Understanding the Weird Parts",
+		"school" : "UDemy",
+		"dates" : "December 2015",
+		"url" : "https://www.udemy.com/understand-javascript/",
+		"description" : "JavaScript course focused on: Scope, closures, prototypes, 'this', " + 
+				"build your own framework, ES6 and more."
+	},
+	{
+		"title" : "Coding Exercises",
+		"school" : "Code Wars",
+		"dates" : "November 2015 - present",
+		"url" : "http://www.codewars.com/users/mitchwa1",
+		"description" : "Completing various exercises in order to challenge my coding ability."
+	},
+	{
+		"title" : "Various Courses",
+		"school" : "Code Academy",
+		"dates" : "September 2015 - present",
+		"url" : "https://www.codecademy.com/learn/all",
+		"description" : "Command Line, Learn SQL, Python, HTML & CSS, JavaScript, jQuery, AngularJS."
+	}
 	]
 };
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
@@ -181,45 +213,31 @@ function displayWork() {
 }
 displayWork();
 
-
-
 projects.display = function() {
 	if(projects.projects.length > 0) {
 		for(i in projects.projects) {
 			$("#projects").append(HTMLprojectStart);
 
-			/*var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title);*/
 			var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title).replace("#",projects.projects[i].titleURL);
-
 			var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[i].dates);
-			/*var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[i].description);*/
 
 			$(".project-entry:last").append(formattedProjectTitle);
 			$(".project-entry:last").append(formattedProjectDates);
 			$(".project-entry:last").append(HTMLprojectDescriptionStart);
-			/*$(".project-entry:last").append(formattedProjectDescription);*/
+
 			for (var role = 0; role < projects.projects[i].description.length; role ++) {
 				var formattedDescription =  HTMLprojectDescription.replace("%data%", projects.projects[i].description[role]);
 				$(".project-description:last").append(formattedDescription);
-		  }
-
+			}
 			for(img in projects.projects[i].images) {
 				var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[i].images[img]);
 				$(".project-entry:last").append(formattedProjectImage);
 			}
-			
-
 		}
 	}
 }
-projects.display();
-/*function displayProjects() {
-	for (project in projects.projects) {
-		$("#projects").append(HTMLprojectStart);		
 
-		var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-		$(".project-entry:last").append(formattedProjectDescription);
-*/
+projects.display();
 
 education.display = function() {
 	if(education.schools.length > 0 || education.onlineCourses.length > 0) {
@@ -236,6 +254,15 @@ education.display = function() {
 			$(".education-entry:last").append(formattedSchoolDates);
 			$(".education-entry:last").append(formattedSchoolLocation);
 			$(".education-entry:last").append(formattedSchoolMajor);
+
+			/*$(".project-entry:last").append(HTMLprojectDescriptionStart);*/
+			
+			for (var role = 0; role < education.schools[i].activities.length; role ++) {
+				var formattedSchoolActivities =  HTMLschoolActivities.replace("%data%", education.schools[i].activities[role]);
+				$(".education-entry:last").append(formattedSchoolActivities);
+		  }
+
+			/*var formattedSchoolActivities = HTMLschoolActivities.replace("%data%", education.schools[i].activities);*/
 		}
 
 		if(education.onlineCourses.length > 0) {
@@ -244,12 +271,16 @@ education.display = function() {
 				$("#education").append(HTMLschoolStart);
 				var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title).replace("#", education.onlineCourses[i].url);
 				var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
-				var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].completed);
+				var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
 				var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[i].url).replace("#", education.onlineCourses[i].url);
 
 				$(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool);
 				$(".education-entry:last").append(formattedOnlineDates);
-				$(".education-entry:last").append(formattedOnlineURL);
+				/* $(".education-entry:last").append(formattedOnlineURL); //I just put URL in title link */
+				$(".education-entry:last").append(HTMLonlineDescriptionStart);
+
+				var formattedOnlineDescription =  HTMLonlineDescription.replace("%data%", education.onlineCourses[i].description);
+				$(".education-entry:last").append(formattedOnlineDescription);
 			}
 		}
 		

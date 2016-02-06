@@ -94,9 +94,11 @@ p {
 
 a {
   color: #1199c3;
+  font-weight: bold;
   text-decoration: none;
   margin-top: 10px;
   display: block;
+
 }
 
 a.cust-links {
@@ -118,6 +120,12 @@ a.cust-links {
 #skills-h3 {
   color: #f5ae23;
   display: none;
+}
+
+#skills {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
 }
 
 .orange {
