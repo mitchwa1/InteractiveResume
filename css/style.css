@@ -1,3 +1,8 @@
+* {
+    padding:0;
+    margin:0;
+}
+
 body,
 div,
 ul,
@@ -12,6 +17,52 @@ h6 {
   padding:0;
   margin:0;
   font-family: "Roboto", sans-serif;
+}
+
+#nav-bar {
+
+  display: flex;
+  width: 100%;
+  background-color: #f5ae23;
+  overflow: hidden;
+  z-index: 100;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
+}
+
+#nav-menu {
+  padding: 0;
+  list-style-type: none;
+  position: relative;
+  display: inline-flex;
+  max-width: 800px;
+  margin: 0 auto;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+a.nav-item {
+  color: white;
+  height: auto;
+  padding: 5px 40px;
+  margin-top: 0px;
+  display: block;
+  text-decoration: none;
+  -webkit-transition: background-color 0.4s ease-out;
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+a.nav-item:hover {
+  background-color: #1199c3;
+}
+
+.fixed-nav {
+  position: fixed;
+  top: 0;
+}
+
+.expand-header {
+  margin-bottom: 30px;
 }
 
 .clear-fix {
@@ -227,21 +278,36 @@ span {
 
 /* Media queries to handle various device widths */
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-device-width: 200px) and (max-device-width: 399px) {
+
+  .welcome-message {
+    display: none;
+  }
+  a.nav-item {
+  padding: 5px 0px;
+  font-weight: 300;
+  }
+  #mapDiv {
+    padding-bottom: 20%;
+  }
+}
+
+@media only screen and (min-device-width: 400px) and (max-width: 750px) {
+  .biopic {
+    width: 150px;
+  }
+  a.nav-item {
+  padding: 5px 10px;
+  font-weight: 500;
+  }
+  .welcome-message {
+    display: none;
+  }
 }
 
 @media only screen and (max-width:900px) {
   .biopic {
     width: 175px;
-  }
-}
-
-@media only screen and (max-width: 750px) {
-  .biopic {
-    width: 150px;
-  }
-  .welcome-message {
-    display: none;
   }
 }
 
