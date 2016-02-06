@@ -145,6 +145,20 @@ var education = {
 	}
 	]
 };
+
+var volunteering = {
+	"projects" : [
+	{
+		"title" : "Reading Partners",
+		"titleURL"	: "http://readingpartners.org/location/colorado/",
+		"dates" : "November 2015 - present",
+		"description" : ["Mentor to a young student, volunteering 2-4 hrs/week " + 
+				"during the academic year."],
+		"images" : []
+	} ]
+};
+
+
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 var formattedBioPic = HTMLbioPic.replace("%data%", bio.picture);
@@ -288,6 +302,32 @@ education.display = function() {
 }
 
 education.display();
+
+volunteering.display = function() {
+	if(volunteering.projects.length > 0) {
+		for(i in volunteering.projects) {
+			$("#volunteering").append(HTMLvolunteeringStart);
+
+			var formattedVolunteeringTitle = HTMLvolunteeringTitle.replace("%data%", volunteering.projects[i].title).replace("#",volunteering.projects[i].titleURL);
+			var formattedVolunteeringDates = HTMLvolunteeringDates.replace("%data%", volunteering.projects[i].dates);
+
+			$(".volunteering-entry:last").append(formattedVolunteeringTitle);
+			$(".volunteering-entry:last").append(formattedVolunteeringDates);
+			$(".volunteering-entry:last").append(HTMLvolunteeringDescriptionStart);
+
+			for (var role = 0; role < volunteering.projects[i].description.length; role ++) {
+				var formattedVolunteeringDescription =  HTMLvolunteeringDescription.replace("%data%", volunteering.projects[i].description[role]);
+				$(".volunteering-description:last").append(formattedVolunteeringDescription);
+			}
+			for(img in volunteering.projects[i].images) {
+				var formattedVolunteeringImage = HTMLvolunteeringImage.replace("%data%", volunteering.projects[i].images[img]);
+				$(".volunteering-entry:last").append(formattedProjectImage);
+			}
+		}
+	}
+}
+
+volunteering.display();
 
 // Add the internationalization button to the bottom of the page.
 $('#main').append(internationalizeButton);

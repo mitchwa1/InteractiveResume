@@ -53,6 +53,13 @@ var HTMLschoolLocation = '<div class="location-text">%data%</div>';
 var HTMLschoolMajor = '<em><br>Major: %data%</em>';
 var HTMLschoolActivities = '<li>%data%</li>'; 
 
+var HTMLvolunteeringStart = '<div class="volunteering-entry"></div>';
+var HTMLvolunteeringTitle = '<a href="#">%data%</a>';
+var HTMLvolunteeringDates = '<div class="date-text">%data%</div>';
+var HTMLvolunteeringDescriptionStart = '<ul class="volunteering-description"></ul>'; /*new*/
+var HTMLvolunteeringDescription = '<li>%data%</li>';
+var HTMLvolunteeringImage = '<img src="%data%" alt="Volunteering Image" height="225" width="250">';
+
 var HTMLonlineClasses = '<br><h3>Online Classes</h3>';
 var HTMLonlineTitle = '<a href="#">%data%';
 var HTMLonlineSchool = ' - %data%</a>';

@@ -20,7 +20,8 @@ h6 {
 
 .education-entry,
 .work-entry,
-.project-entry {
+.project-entry, 
+.volunteering-entry {
   padding: 0 5%;
 }
 
@@ -182,7 +183,8 @@ ul {
   margin: 1.5em 1em 0em;
 }
 
-ul.work-description, ul.project-description {
+ul.work-description, ul.project-description,
+ul.volunteering-description {
   list-style-type: disc;
 }
 
