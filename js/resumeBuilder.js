@@ -57,15 +57,18 @@ var work = {
 var projects = {
 	"projects" : [
 	{
-		"title" : "Udacity projects",
+		"title" : "Web Portfolio",
+		"titleURL"	: "https://github.com/mitchwa1/Udacity-Front-End-ND-P1-PortfolioSite.git",
 		"dates" : "January 2016 - present",
-		"description" : "Front-End Projects",
-		"images" : ["https://github.com/mitchwa1"]
+		"description" : ["Project 1 - Udacity Front-End NanoDegree.  I built a 'mock-portfolio' " +
+		"- including a google maps API using Polymer to show locations of where I have lived"],
+		"images" : ["images/Project1.png"]
 	},
 	{
 		"title" : "Mechanical Engineering. Capstone Project",
+		"titleURL"	: "https://github.com/mitchwa1/Udacity-Front-End-ND-P1-PortfolioSite.git",
 		"dates" : "2012",
-		"description" : "<h2>Lung Biopsy Needle</h2> ",
+		"description" : ["<h2>Lung Biopsy Needle</h2> "],
 		"images" : ["images/UMN_Large.png"]
 
 	}
@@ -130,8 +133,6 @@ $("#header").append(formattedWelcomeMsg);
 * Make bio.name to internationalized.
 * The last name will be all-uppercased, and the first name will be
 * capitalized.
-*
-* @return {string} new, modified name.
 */
 function inName(name) {
   name = name.trim().split(" ");
@@ -187,13 +188,20 @@ projects.display = function() {
 		for(i in projects.projects) {
 			$("#projects").append(HTMLprojectStart);
 
-			var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title);
+			/*var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title);*/
+			var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title).replace("#",projects.projects[i].titleURL);
+
 			var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[i].dates);
-			var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[i].description);
+			/*var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[i].description);*/
 
 			$(".project-entry:last").append(formattedProjectTitle);
 			$(".project-entry:last").append(formattedProjectDates);
-			$(".project-entry:last").append(formattedProjectDescription);
+			$(".project-entry:last").append(HTMLprojectDescriptionStart);
+			/*$(".project-entry:last").append(formattedProjectDescription);*/
+			for (var role = 0; role < projects.projects[i].description.length; role ++) {
+				var formattedDescription =  HTMLprojectDescription.replace("%data%", projects.projects[i].description[role]);
+				$(".project-description:last").append(formattedDescription);
+		  }
 
 			for(img in projects.projects[i].images) {
 				var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[i].images[img]);
@@ -204,8 +212,14 @@ projects.display = function() {
 		}
 	}
 }
-
 projects.display();
+/*function displayProjects() {
+	for (project in projects.projects) {
+		$("#projects").append(HTMLprojectStart);		
+
+		var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+		$(".project-entry:last").append(formattedProjectDescription);
+*/
 
 education.display = function() {
 	if(education.schools.length > 0 || education.onlineCourses.length > 0) {
