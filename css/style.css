@@ -186,12 +186,30 @@ ul.work-description, ul.project-description {
   list-style-type: disc;
 }
 
+ul#footerContacts {
+  margin: 0;
+}
+
 .biopic {
   float: left;
   padding: 10px;
   width: 200px;
   display: none;
 }
+
+#map {
+  display: block;
+  height: calc(98% - 20px);
+  margin: 0 5%;
+}
+
+#mapDiv {
+  background-color: #4a4a4a;
+  height: 400px;
+  width: 100%;
+  padding-bottom: 12%;
+}
+
 
 img {
   padding: 10px;
@@ -208,9 +226,6 @@ span {
 /* Media queries to handle various device widths */
 
 @media only screen and (max-width: 1024px) {
-  #lets-connect {
-    margin-top: 5%;
-  }
 }
 
 @media only screen and (max-width:900px) {
@@ -220,9 +235,6 @@ span {
 }
 
 @media only screen and (max-width: 750px) {
-  #lets-connect {
-    margin-top: 10%;
-  }
   .biopic {
     width: 150px;
   }
@@ -231,21 +243,17 @@ span {
   }
 }
 
-#map {
-  display: block;
-  height: 100%;
-  margin: 0 5%;
-}
-
-#mapDiv {
-  height: 400px;
-  width: 100%;
-  padding-bottom: 5%;
-}
-
 @media only screen and (min-width: 750px) {
   #skills-h3,
   .biopic {
     display: block;
+  }
+  #map {
+  height: calc(99% - 20px);
+  margin: 0 5%;
+  }
+
+  #mapDiv {
+    padding-bottom: 5%;
   }
 }
