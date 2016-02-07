@@ -74,7 +74,6 @@ var projects = {
 		 		"professionals to validate product ideation and receive continuous "
 		 		+ " feedback during the development process."],
 		"images" : []
-
 	}
 	]
 };
@@ -158,12 +157,10 @@ var volunteering = {
 	} ]
 };
 
-
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 var formattedBioPic = HTMLbioPic.replace("%data%", bio.picture);
 var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-
 var formattedContactInfo = [];
 formattedContactInfo.push(HTMLemail.replace("%data%", bio.contacts.email));
 formattedContactInfo.push(HTMLgithub.replace("%data%", bio.contacts.github));
@@ -188,7 +185,6 @@ function inName(name) {
 
   return name[0] + " " + name[1];
 }
-
 
 if(bio.skills.length > 0) {
 	$("#header").append(HTMLskillsStart);
@@ -225,6 +221,7 @@ function displayWork() {
 
 	}
 }
+
 displayWork();
 
 projects.display = function() {
@@ -268,15 +265,11 @@ education.display = function() {
 			$(".education-entry:last").append(formattedSchoolDates);
 			$(".education-entry:last").append(formattedSchoolLocation);
 			$(".education-entry:last").append(formattedSchoolMajor);
-
-			/*$(".project-entry:last").append(HTMLprojectDescriptionStart);*/
 			
 			for (var role = 0; role < education.schools[i].activities.length; role ++) {
 				var formattedSchoolActivities =  HTMLschoolActivities.replace("%data%", education.schools[i].activities[role]);
 				$(".education-entry:last").append(formattedSchoolActivities);
 		  }
-
-			/*var formattedSchoolActivities = HTMLschoolActivities.replace("%data%", education.schools[i].activities);*/
 		}
 
 		if(education.onlineCourses.length > 0) {
@@ -328,16 +321,7 @@ volunteering.display = function() {
 }
 
 volunteering.display();
-
 // Add the internationalization button to the bottom of the page.
 $('#main').append(internationalizeButton);
-
 //google map
 $("#mapDiv").append(googleMap);
-
-
-//$("#header").append(bio.name);
-//$("#header").append(bio.role);
-//$("#main").append(work["position"]);
-//$("#main").append(education.name);
-
