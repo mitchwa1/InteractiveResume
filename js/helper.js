@@ -1,10 +1,5 @@
 /*
-
 This file contains all of the code running in the background that makes resumeBuilder.js possible. We call these helper functions because they support your code in this course.
-
-Don't worry, you'll learn what's going on in this file throughout the course. You won't need to make any changes to it until you start experimenting with inserting a Google Map in Problem Set 3.
-
-Cameron Pittman
 */
 
 
@@ -34,7 +29,6 @@ var HTMLworkEmployer = '<a href="#">%data%';
 var HTMLworkTitle = ' - %data%</a>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
-//var HTMLworkDescription = '<p><br>%data%</p>';
 var HTMLworkDescriptionStart = '<ul class="work-description"></ul>'; /*new*/
 var HTMLworkDescription = '<li>%data%</li>';
 
@@ -71,7 +65,6 @@ var HTMLonlineDescription = '<li>%data%</li>'; /*new*/
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 
-
 /*
 The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
 */
@@ -104,8 +97,6 @@ $(document).click(function(loc) {
   logClicks(x, y);
 });
 
-
-
 /*
 This is the fun part. Here's where we generate the custom Google Map for the website.
 See the documentation below for more details.
@@ -113,14 +104,12 @@ https://developers.google.com/maps/documentation/javascript/reference
 */
 var map;    // declares a global map variable
 
-
 /*
 Start here! initializeMap() is called when page is loaded.
 */
 function initializeMap() {
 
   var locations;
-
   var mapOptions = {
     scrollWheel: false,
     disableDefaultUI: true
@@ -131,8 +120,6 @@ function initializeMap() {
   appended to #mapDiv in resumeBuilder.js. 
   */
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
-
-
   /*
   locationFinder() returns an array of every location string from the JSONs
   written for bio, education, and work.
@@ -249,11 +236,9 @@ function initializeMap() {
   pinPoster(locations);
 
 }
-
 /*
 Uncomment the code below when you're ready to implement a Google Map!
 */
-
 // Calls the initializeMap() function when the page loads
 window.addEventListener('load', initializeMap);
 
