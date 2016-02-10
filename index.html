@@ -13,6 +13,9 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     <!-- Tells the browser what the title of this page should be. -->
     <title>Mitch's Resume</title>
 
+    <!--Bootstrap add*/ -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Load the page styles. -->
     <link href="css/style.css" rel="stylesheet">
 
@@ -33,7 +36,6 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     you can't accomplish with vanilla (regular) JavaScript.
     -->
     <script src="js/jQuery.js"></script>
-
     <!-- More on helper.js in the class -->
     <script src="js/helper.js"></script>
 
@@ -46,20 +48,23 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
 
     <meta name="viewport" content="width=device-width">
+    
+
 </head>
 
-<body>
-    <div id="main">
+<body unresolved>
+    <div id="main" class="container">
+      <div class="row">
         <!--
         Everything from here to the <script> tag below is the skeleton of your
         website. Your code will add information to each of the sections of the
         resume below. You can pretty easily figure out what each section will
         display by looking at the id or at what's written between the <h2> tags.
         -->
-        <div id="header" class="center-content clear-fix">
+        <div id="header" class="col-md-12 center-content clear-fix">
             <ul id="topContacts" class="flex-box"></ul>
         </div>
-        <nav id="nav-bar" class="nav-nav-bar">
+        <nav id="nav-bar" class="navbar navbar-default navbar-inverse navbar-fixed-top nav-nav-bar"> <!--classes fix navbar overflowing in bootstrap -->
             <ul id="nav-menu">
                 <li><a class="nav-item" href="#workExperience">Work</a>
                 </li>
@@ -72,22 +77,22 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
             </ul>
         </nav>
         <div style="clear: both;"></div>
-        <div id="workExperience" class="gray">
+        <div id="workExperience" class="col-md-12 gray">
             <h2>Work Experience</h2>
         </div>
-        <div id="projects">
+        <div id="projects" class="col-md-12">
             <h2>Projects</h2>
         </div>
-        <div id="education" class="gray">
+        <div id="education" class="col-md-12 gray">
             <h2>Education</h2>
         </div>
-        <div id="volunteering">
-            <h2>Volunteering</h2>
+        <div id="volunteering" class="col-md-12">
+          <h2>Volunteering</h2>
         </div>
-        <div id="mapDiv">
+        <div id="mapDiv" class="col-md-12">>
             <h2>Where I've Lived and Worked</h2>
         </div>
-        <div id="lets-connect" class="dark-gray">
+        <div id="lets-connect" class="col-md-12 dark-gray">
             <h2 class="orange center-text">Contact Info</h2>
             <ul id="footerContacts" class="flex-box">
             </ul>
@@ -99,6 +104,9 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     writing. In resumeBuilder.js, you'll be writing code that builds the resume
     dynamically when this website, index.html, is opened.
     -->
+    <script src="js/bootstrap.min.js"></script>
+
+
     <script src="js/resumeBuilder.js"></script>
 
 

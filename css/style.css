@@ -55,6 +55,10 @@ a.nav-item:hover {
   background-color: #1199c3;
 }
 
+.nav-nav-bar {
+  max-width: 1170px;
+}
+
 .fixed-nav {
   position: fixed;
   top: 0;
@@ -72,7 +76,7 @@ a.nav-item:hover {
 .work-entry,
 .project-entry, 
 .volunteering-entry {
-  padding: 0 5%;
+  padding: 2 4%;
 }
 
 h1 {
@@ -108,7 +112,7 @@ h2,
 h3,
 h4,
 h5 {
-  padding: 10px 5%;
+  padding: 10px;
 }
 
 #role {
@@ -225,8 +229,9 @@ ul {
 }
 
 ul.work-description, ul.project-description,
-ul.volunteering-description {
+ul.volunteering-description{
   list-style-type: disc;
+  margin-top: 3%;
 }
 
 ul#footerContacts {
@@ -281,12 +286,22 @@ span {
   #mapDiv {
     padding-bottom: 20%;
   }
+
+  ul.work-description, ul.project-description,
+  ul.volunteering-description{
+  margin-top: 7%;
+  }
 }
 
 @media only screen and (min-device-width: 400px) and (max-width: 750px) {
   .biopic {
     width: 150px;
   }
+  ul.work-description, ul.project-description,
+ul.volunteering-description{
+
+  margin-top: 5%;
+}
 
   a.nav-item {
     padding: 5px 10px;
@@ -295,6 +310,18 @@ span {
 
   .welcome-message {
     display: none;
+  }
+}
+
+@media only screen and (min-device-width: 992px) and (max-width: 1199px) {
+  .nav-nav-bar {
+    max-width: 970px;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-width: 991px) {
+  .nav-nav-bar {
+    max-width: 750px;
   }
 }
 
