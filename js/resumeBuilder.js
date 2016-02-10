@@ -84,16 +84,16 @@ var bio = {
 	"contacts" : {
 		"mobile": "867-5309",
 		"email" : "<a class='cust-links' href=mailto:Mitchw543@gmail.com>Mitchw543@gmail.com</a>",
-		"linkedIn" : "<a class='cust-links' href=https://www.linkedin.com/in/mitchandrus target='_blank'>Mitch Andrus</a>",
 		"github" : "<a class='cust-links' href=https://github.com/mitchwa1 target='_blank'>Mitchwa1</a>",
+		"linkedIn" : "<a class='cust-links' href=https://www.linkedin.com/in/mitchandrus target='_blank'>Mitch Andrus</a>",
 		"location" : "<a class='cust-links' href=https://www.google.com/search?q=denver+colorado&oq=denver+colorado&aqs=chrome.0.69i59j69i65j69i60j69i64j69i60.2445j0j1&sourceid=chrome&es_sm=119&ie=UTF-8 target='_blank'>Denver, CO</a>"
 	},
-	"picture" : "images/Me.jpg",
 	"welcomeMessage" : "Passionate about delivering a consistent and high-quality" +
-	" customer experience, improving product offerings, and continuous learning.",
+				" customer experience, improving product offerings, and continuous learning.",
 	"skills" : [ 
-		"Front-End Development", "HTML CSS JavaScript", "Technical Sales", "Business Development", "Mountaineering"
-	]
+				"Front-End Development", "HTML CSS JavaScript", "Technical Sales", "Business Development", "Mountaineering"
+				],
+	"biopic" : "images/Me.jpg"
 };
 
 var education = {
@@ -106,15 +106,15 @@ var education = {
 		"dates" : "2012",
 		"url" : "http://me.umn.edu/index.shtml",
 		"activities" : ["American Society of Mechanical Engineers (ASME)" ,
-		"National Organization for Business & Engineering (NOBE)" ,
-		"Minnesota Space Grant Consortium (NASA)"]
+				"National Organization for Business & Engineering (NOBE)" ,
+				"Minnesota Space Grant Consortium (NASA)"]
 	},
 	],
 	"onlineCourses": [
 	{
 		"title" : "Front-End NanoDegree",
 		"school" : "Udacity",
-		"dates" : "January 2016 - present",
+		"date" : "January 2016 - present",
 		"url" : "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001",
 		"description" : "Taking various courses focused on Front-End design using HTML, CSS and JavaScript " +
 				"- with the end goal to build six portfolio projects using responsive design optimized " +
@@ -123,7 +123,7 @@ var education = {
 	{
 		"title" : "JavaScript, Understanding the Weird Parts",
 		"school" : "UDemy",
-		"dates" : "December 2015",
+		"date" : "December 2015",
 		"url" : "https://www.udemy.com/understand-javascript/",
 		"description" : "JavaScript course focused on: Scope, closures, prototypes, 'this', " + 
 				"build your own framework, ES6 and more."
@@ -131,14 +131,14 @@ var education = {
 	{
 		"title" : "Coding Exercises",
 		"school" : "Code Wars",
-		"dates" : "November 2015 - present",
+		"date" : "November 2015 - present",
 		"url" : "http://www.codewars.com/users/mitchwa1",
 		"description" : "Completing various exercises in order to challenge my coding ability."
 	},
 	{
 		"title" : "Various Courses",
 		"school" : "Code Academy",
-		"dates" : "September 2015 - present",
+		"date" : "September 2015 - present",
 		"url" : "https://www.codecademy.com/learn/all",
 		"description" : "Command Line, Learn SQL, Python, HTML & CSS, JavaScript, jQuery, AngularJS."
 	}
@@ -165,7 +165,7 @@ bio.display = function () {
 	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
 	var formattedLinkedIn = HTMLlinkedIn.replace("%data%", bio.contacts.linkedIn);
 	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-	var formattedBioPic = HTMLbioPic.replace("%data%", bio.picture);
+	var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
 	var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 
 	$("#header").prepend(formattedName + formattedRole);
@@ -197,7 +197,7 @@ function inName(name) {
 }
 
 
-function displayWork() {
+work.display = function() {
   	if(work.jobs.length > 0) {
 
 		for (var job in work.jobs) {
@@ -218,7 +218,7 @@ function displayWork() {
 	}
 }
 
-displayWork();
+work.display();
 
 projects.display = function() {
 	if(projects.projects.length > 0) {
@@ -274,7 +274,7 @@ education.display = function() {
 				$("#education").append(HTMLschoolStart);
 				var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title).replace("#", education.onlineCourses[i].url);
 				var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
-				var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
+				var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].date);
 				var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[i].url).replace("#", education.onlineCourses[i].url);
 
 				$(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool);
