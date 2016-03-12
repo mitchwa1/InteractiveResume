@@ -1,10 +1,10 @@
 var work = {
 	"jobs": [
 	{
-		"employer" : "ADT",
+		"employer" : "Johnson Controls",
 		"title" : "Technical Sales Representative",
-		"location" : "Boulder, CO",
-		"dates" : "February 2016 - present",
+		"location" : "Denver, CO",
+		"dates" : "March 2016 - present",
 		"description" : []
 	},
 	{
