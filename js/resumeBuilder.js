@@ -1,6 +1,5 @@
 var work = {
-	"jobs": [
-	{
+	"jobs": [{
 		"employer" : "Johnson Controls",
 		"title" : "Technical Sales Representative",
 		"location" : "Denver, CO",
@@ -50,13 +49,11 @@ var work = {
 				" and research opportunities by investigating the structural properties " + 
 				"of both standard and prototype materials; quantified results and " + 
 				"presented recommendations."]
-	}
-	]
+	}]
 };
 
 var projects = {
-	"projects" : [
-	{
+	"projects" : [{
 		"title" : "Web Portfolio",
 		"titleURL"	: "https://github.com/mitchwa1/Udacity-Front-End-ND-P1-PortfolioSite.git",
 		"dates" : "January 2016 - present",
@@ -74,8 +71,7 @@ var projects = {
 		 		"professionals to validate product ideation and receive continuous " + 
 		 		"feedback during the development process."],
 		"images" : []
-	}
-	]
+	}]
 };
 
 var bio = {
@@ -97,8 +93,7 @@ var bio = {
 };
 
 var education = {
-	"schools": [
-	{
+	"schools": [{
 		"name" : "University of Minnesota, Twin Cities",
 		"location" : "Minneapolis, MN",
 		"degree" : "B.S.",
@@ -141,20 +136,18 @@ var education = {
 		"date" : "September 2015 - present",
 		"url" : "https://www.codecademy.com/learn/all",
 		"description" : "Command Line, Learn SQL, Python, HTML & CSS, JavaScript, jQuery, AngularJS."
-	}
-	]
+	}]
 };
 
 var volunteering = {
-	"projects" : [
-	{
+	"projects" : [{
 		"title" : "Reading Partners",
 		"titleURL"	: "http://readingpartners.org/location/colorado/",
 		"dates" : "November 2015 - present",
 		"description" : ["Mentor to a young student, volunteering 2-4 hrs/week " + 
 				"during the academic year."],
 		"images" : []
-	} ]
+	}]
 };
 
 bio.display = function () {
